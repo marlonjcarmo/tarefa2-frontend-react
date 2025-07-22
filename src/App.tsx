@@ -18,6 +18,7 @@
 
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import InfoCard from './components/InfoCard';
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -71,33 +72,31 @@ const App: React.FC = () => {
 
       {/* Cards */}
       <section id="funcionalidades" className="mt-5">
-        <div className="row">
-          <div className="col-md-4 mb-4">
-            <div className="card h-100">
-              <div className="card-body">
-                <h5 className="card-title">Funcionalidades</h5>
-                <p className="card-text">Fases interativas, desafios práticos de circuitos, feedback em tempo real e sistema de conquistas.</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4 mb-4">
-            <div className="card h-100">
-              <div className="card-body">
-                <h5 className="card-title">Tecnologias</h5>
-                <p className="card-text">Kotlin, Android Studio, Design Instrucional, Firebase, Bootstrap e princípios de gamificação.</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4 mb-4">
-            <div className="card h-100">
-              <div className="card-body">
-                <h5 className="card-title">Diferenciais</h5>
-                <p className="card-text">Aprendizagem prática, redução da evasão escolar, motivação dos alunos e ensino personalizado.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div className="row">
+    <div className="col-md-4 mb-4">
+      <InfoCard 
+        title="Funcionalidades" 
+        description="Fases interativas, desafios práticos de circuitos, feedback em tempo real."
+        icon="fa-gamepad"
+        isHighlighted={true} // Exemplo de prop condicional
+      />
+    </div>
+    <div className="col-md-4 mb-4">
+      <InfoCard 
+        title="Tecnologias" 
+        description="Kotlin, Android Studio, Firebase, Bootstrap."
+        icon="fa-code"
+      />
+    </div>
+    <div className="col-md-4 mb-4">
+      <InfoCard 
+        title="Diferenciais" 
+        description="Redução da evasão escolar, motivação dos alunos."
+        icon="fa-star"
+      />
+    </div>
+  </div>
+</section>
 
       {/* Botão de alternância de tema */}
       <div className="text-center mb-4">
